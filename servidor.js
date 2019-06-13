@@ -1,6 +1,6 @@
 const express = require('express');
 const http = require('http');
-const socketio = require('socket.io');
+// const socketio = require('socket.io');
 const mongoose = require('mongoose');
 const path = require('path');
 
@@ -19,7 +19,7 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-require('./sockets')(io);
+// require('./sockets')(io);
 
 server.listen(app.get('port'), ()=>{
     console.log(`server port: ${app.get('port')}` );    
