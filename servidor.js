@@ -8,7 +8,7 @@ const server = http.createServer(app);
 // const io = socketio.listen(server);
 
 // rutas
-import userRoutes from './routes/usuario';
+import userRoutes from '/routes/usuario';
 // import postRoutes from './routes/post';
 // import ordenRoutes from './routes/ordenes';
 // import materialRoutes from './routes/materiales';
