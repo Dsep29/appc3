@@ -1,6 +1,15 @@
 
 var http = require('http');
-var app =  require('./index');
+var app =  require('./index.ts');
+
+ var userRoutes = require('./routes/usuario');
+ var postRoutes = require('./routes/post');
+ var ordenRoutes = require('./routes/ordenes');
+ var materialRoutes = require( './routes/materiales');
+
+// import userRoutes from './routes/usuario';
+// import postRoutes from './routes/post';
+// import ordenRoutes from './routes/ordenes';
 
 var mongoose = require(mongoose);
 
@@ -24,7 +33,7 @@ mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?r
                 
                );
 
-    app.get("", function(req, res) {
+    app.get("/", function(req, res) {
     //when we get an http get request to the root/homepage
         res.send("Hello World");
               });
