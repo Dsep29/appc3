@@ -12,6 +12,9 @@ const post_1 = __importDefault(require("./routes/post"));
 const ordenes_1 = __importDefault(require("./routes/ordenes"));
 const cors_1 = __importDefault(require("cors"));
 const materiales_1 = __importDefault(require("./routes/materiales"));
+// var app = express();
+// var server = http.createServer(app);
+// var serve = new http.Server(app);
 const server = new server_1.default();
 // Body parser
 server.app.use(body_parser_1.default.urlencoded({ extended: true }));
@@ -25,13 +28,19 @@ server.app.use('/user', usuario_1.default);
 server.app.use('/posts', post_1.default);
 server.app.use('/orden', ordenes_1.default);
 server.app.use('/material', materiales_1.default);
-// Conectar DB
-mongoose_1.default.connect('mongodb://localhost:27017/fepasa', { useNewUrlParser: true, useCreateIndex: true }, (err) => {
+// var port = process.env.PORT || 8080; // linea nueva
+// server.app.set('port', port); // linea nueva
+// console.log('port:', port);
+// server.app.use(express.json());
+// Conectar DB mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority
+//  mongodb://localhost:27017/fepasa
+mongoose_1.default.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true }, (err) => {
     if (err)
-        throw err;
+        throw console.log(err);
     console.log('Base de datos ONLINE');
 });
-// Levantar express
+//Levantar express
 server.start(() => {
     console.log(`Servidor corriendo en puerto ${server.port}`);
 });
+// module.exports = server;
