@@ -8,7 +8,7 @@ const server = http.createServer(app);
 // const io = socketio.listen(server);
 
 // rutas
-// import userRoutes from './routes/usuario';
+import userRoutes from './routes/usuario';
 // import postRoutes from './routes/post';
 // import ordenRoutes from './routes/ordenes';
 // import materialRoutes from './routes/materiales';
@@ -16,7 +16,7 @@ const server = http.createServer(app);
 // const userRoutes = require( './routes/usuarios');
 
  // Rutas de mi app
-// server.app.use('/user', userRoutes );
+server.app.use('/user', userRoutes );
 // server.app.use('/posts', postRoutes );
 // server.app.use('/orden', ordenRoutes );
 // server.app.use('/material', materialRoutes );
