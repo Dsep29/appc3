@@ -14,7 +14,7 @@ const server = http.createServer(app);
 // import ordenRoutes from './routes/ordenes';
 // import materialRoutes from './routes/materiales';
 
-const userRoutes = require( './routes/usuario');
+const userRoutes = require( './routes/usuarios');
 
  // Rutas de mi app
 server.app.use('/user', userRoutes );

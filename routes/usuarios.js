@@ -1,9 +1,9 @@
-import { Router, Request, Response } from 'express';
-import { Usuario } from '../models/usuario.model';
-import bcrypt from 'bcrypt';
-import Token from '../classes/token';
-import { verificaToken } from '../middlewares/autenticacion';
-import { Orden } from '../models/orden.model';
+const  Router, Request, Response = require('express');
+const  Usuario  = require('../models/usuario.model') ;
+const  bcrypt = require('bcrypt') ;
+const  Token = require('../classes/token');
+const  verificaToken  = require('../middlewares/autenticacion') ;
+const  Orden  = require('../models/orden.model');
 
 const userRoutes = Router(); // rutas consulta usuario
 
