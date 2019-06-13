@@ -24,4 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 server.listen(app.get('port'), ()=>{
     console.log(`server port: ${app.get('port')}` );    
-})
+});
+
+app.get("/", function(req, res) {
+    //when we get an http get request to the root/homepage
+    res.send("Hello World");
+  });
