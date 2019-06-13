@@ -36,7 +36,7 @@ server.app.use('/material', materialRoutes );
 
 // Conectar DB
 //  mongodb://localhost:27017/fepasa
-mongoose.connect('mongodb://localhost:80/fepasa', 
+mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority', 
                 { useNewUrlParser: true, useCreateIndex: true }, ( err ) => {
 
    if ( err ) throw err;
