@@ -11,7 +11,8 @@ const server = http.createServer(app);
 // const io = socketio.listen(server);
 
 
-mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority',
+                  { useNewUrlParser: true, useCreateIndex: true })
                 .then( db => console.log( 'base de datos conectada', db))
                 .catch( err => console.log(err));
 
