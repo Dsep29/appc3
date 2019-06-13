@@ -42,7 +42,7 @@ mongoose.connect('mongodb://localhost:80/fepasa',
    if ( err ) throw err;
 
    console.log('Base de datos ONLINE');
-})
+});
 
 // Levantar express
 server.start( () => {

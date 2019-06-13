@@ -2,10 +2,10 @@ var http = require('http');
 var express  = require('express');
 var app =  express();
 
- var userRoutes = require('./routes/usuario');
- var postRoutes = require('./routes/post');
- var ordenRoutes = require('./routes/ordenes');
- var materialRoutes = require( './routes/materiales');
+ var userRoutes = require('./routes/usuario.ts');
+ var postRoutes = require('./routes/post.ts');
+ var ordenRoutes = require('./routes/ordenes.ts');
+ var materialRoutes = require( './routes/materiales.ts');
 
  var bodyParser = require('body-parser');
  var fileUpload = require('express-fileupload');
@@ -39,19 +39,12 @@ server.app.use('/material', materialRoutes );
 var port = process.env.PORT || 8080;
 app.set('port', port);
 
-mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority',
-                (err, resp ) => {
-                    if( err){
-                        throw err;
-                    } else {
-                        console.log('conexion correcta');
-                         server.listen(port, function(){
-                            console.log('servidor funcionando');
-                         });
-                    }
-                }  
+mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority')
+                .then( db => console.log( 'base de datos conectada', db))
+                .catch( err => console.log(err));
+
                 
-               );
+               
 
     app.get("/", function(req, res) {
     //when we get an http get request to the root/homepage
