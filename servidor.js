@@ -9,18 +9,18 @@ const server = http.createServer(app);
 // const io = socketio.listen(server);
 
 // rutas
-import userRoutes from './routes/usuario';
-import postRoutes from './routes/post';
-import ordenRoutes from './routes/ordenes';
-import materialRoutes from './routes/materiales';
+// import userRoutes from './routes/usuario';
+// import postRoutes from './routes/post';
+// import ordenRoutes from './routes/ordenes';
+// import materialRoutes from './routes/materiales';
+
+const userRoutes = require( './routes/usuario');
 
  // Rutas de mi app
 server.app.use('/user', userRoutes );
-server.app.use('/posts', postRoutes );
-server.app.use('/orden', ordenRoutes );
-server.app.use('/material', materialRoutes );
-
-
+// server.app.use('/posts', postRoutes );
+// server.app.use('/orden', ordenRoutes );
+// server.app.use('/material', materialRoutes );
 
 mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority',
                   { useNewUrlParser: true, useCreateIndex: true })
