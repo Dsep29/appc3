@@ -24,7 +24,7 @@ mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?r
                 
                );
 
-    app.get("/", function(req, res) {
+    app.get("", function(req, res) {
     //when we get an http get request to the root/homepage
         res.send("Hello World");
               });
