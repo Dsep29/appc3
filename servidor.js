@@ -8,7 +8,7 @@ const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio.listen(server);
+// const io = socketio.listen(server);
 
 
 mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority')
