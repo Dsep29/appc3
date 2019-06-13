@@ -5,10 +5,21 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 
-
 const app = express();
 const server = http.createServer(app);
 // const io = socketio.listen(server);
+
+// rutas
+ const userRoutes = require('./routes/usuario.ts');
+ const postRoutes = require('./routes/post.ts');
+ const ordenRoutes = require('./routes/ordenes.ts');
+ const materialRoutes = require( './routes/materiales.ts');
+
+ // Rutas de mi app
+server.app.use('/user', userRoutes );
+server.app.use('/posts', postRoutes );
+server.app.use('/orden', ordenRoutes );
+server.app.use('/material', materialRoutes );
 
 
 mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority',
