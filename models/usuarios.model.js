@@ -55,4 +55,4 @@ usuarioSchema.method('compararPassword', function( password = '') {
 
 
 // export const Usuario = model<IUsuario>('Usuario', usuarioSchema);
-module.exports = model('Usuario', usuarioSchema);
+module.exports = usuarioSchema;
