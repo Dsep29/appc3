@@ -4,17 +4,17 @@ const jwt = require('jsonwebtoken');
 // export default class Token {
     module.exports =  function(Token) {
 
-    private static seed: string = 'este-es-el-seed-de-mi-app-secreto';
-    private static caducidad: string = '30d';
+    private seed = 'este-es-el-seed-de-mi-app-secreto';
+    private caducidad = '30d';
 
-    static getJwtToken( payload: any ): string {
+    getJwtToken( payload: any ): string {
         return jwt.sign({
             usuario: payload
         }, this.seed, { expiresIn: this.caducidad });
 
     }
 
-    static comprobarToken( userToken: string ) {
+    comprobarToken( userToken: string ) {
 
         return new Promise( (resolve, reject ) => {
 
