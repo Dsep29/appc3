@@ -1,5 +1,7 @@
 
-const Schema, model, Document = require('mongoose');
+const Schema = require('mongoose');
+const model= require('mongoose');
+const Document = require('mongoose');
 const bcrypt = require('bcrypt');
 
 
@@ -30,7 +32,7 @@ const usuarioSchema = new Schema({
 });
 
 
-usuarioSchema.method('compararPassword', function( password: string = ''): boolean {
+usuarioSchema.method('compararPassword', function( password = '') {
 
     if (  bcrypt.compareSync( password, this.password ) ) {
         return true;
@@ -40,15 +42,15 @@ usuarioSchema.method('compararPassword', function( password: string = ''): boole
 
 });
 
-interface IUsuario extends Document {
-    nombre: string;
-    email: string;
-    password: string;
-    avatar: string;
-    rol: string;
+// interface IUsuario extends Document {
+//     nombre: string;
+//     email: string;
+//     password: string;
+//     avatar: string;
+//     rol: string;
 
-    compararPassword(password: string): boolean;
-}
+//     compararPassword(password);
+// }
 
 
 
