@@ -45,8 +45,8 @@ server.app.use('/material', materialRoutes );
 
 
 // Conectar DB mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority
-//  
-mongoose.connect('mongodb://localhost:27017/fepasa', 
+//  mongodb://localhost:27017/fepasa
+mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority', 
                 { useNewUrlParser: true, useCreateIndex: true }, ( err ) => {
 
    if ( err ) throw  console.log(err);
