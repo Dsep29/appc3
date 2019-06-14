@@ -1,12 +1,11 @@
 const jwt = require('jsonwebtoken');
 
 
-export default class Token {
+// export default class Token {
+    module.exports =  Token {
 
     private static seed: string = 'este-es-el-seed-de-mi-app-secreto';
     private static caducidad: string = '30d';
-
-    constructor() { }
 
     static getJwtToken( payload: any ): string {
         return jwt.sign({
