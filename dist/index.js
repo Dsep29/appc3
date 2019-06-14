@@ -33,8 +33,8 @@ server.app.use('/material', materiales_1.default);
 // console.log('port:', port);
 // server.app.use(express.json());
 // Conectar DB mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority
-//  
-mongoose_1.default.connect('mongodb://localhost:27017/fepasa', { useNewUrlParser: true, useCreateIndex: true }, (err) => {
+//  mongodb://localhost:27017/fepasa
+mongoose_1.default.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true }, (err) => {
     if (err)
         throw console.log(err);
     console.log('Base de datos ONLINE');
