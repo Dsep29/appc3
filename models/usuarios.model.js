@@ -1,11 +1,11 @@
 
-const Schema = require('mongoose');
+const mongoose = require('mongoose');
 const model= require('mongoose');
 const Document = require('mongoose');
 const bcrypt = require('bcrypt');
 
 
-const usuarioSchema = new Schema({
+const usuarioSchema = mongoose.Schema({
 
     nombre: {
         type: String,
