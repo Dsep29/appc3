@@ -1,9 +1,9 @@
-const  Router, Request, Response = require('express');
-const  Usuario  = require('../models/usuario.model') ;
+const  Router = require('express');
+const  Usuario  = require('../models/usuarios.model') ;
 const  bcrypt = require('bcrypt') ;
-const  Token = require('../classes/token');
-const  verificaToken  = require('../middlewares/autenticacion') ;
-const  Orden  = require('../models/orden.model');
+const  Token = require('../classes/tokens');
+const  verificaToken  = require('../middlewares/autenticaciones') ;
+const  Orden  = require('../models/ordenes.model');
 
 const userRoutes = Router(); // rutas consulta usuario
 
@@ -46,7 +46,7 @@ userRoutes.post('/login', (req, res ) => {
 });
 
 // Crear un usuario
-userRoutes.post('/create', ( req: Request, res: Response ) => {
+userRoutes.post('/create', ( req, res ) => {
 
     const user = {
         nombre   : req.body.nombre,
@@ -81,7 +81,7 @@ userRoutes.post('/create', ( req: Request, res: Response ) => {
 });
 
 // Actualizar usuario
-userRoutes.post('/update', verificaToken, (req: any, res: Response ) => {
+userRoutes.post('/update', verificaToken, (req, res ) => {
 
     const user = {
         nombre: req.body.nombre || req.usuario.nombre,
@@ -120,7 +120,7 @@ userRoutes.post('/update', verificaToken, (req: any, res: Response ) => {
 });
 
 // ruta de obtener token, datos de usuario
-userRoutes.get('/', [ verificaToken ], ( req: any, res: Response ) => {
+userRoutes.get('/', [ verificaToken ], ( req, res ) => {
 
     const usuario = req.usuario;
 
@@ -132,7 +132,7 @@ userRoutes.get('/', [ verificaToken ], ( req: any, res: Response ) => {
 });
 
 // ruta crear Orden
-userRoutes.put('/crear-orden',  ( req: any, res: Response ) => {
+userRoutes.put('/crear-orden',  ( req, res ) => {
     // const usuario = req.userDB.nombre;
 
     const orden = {
