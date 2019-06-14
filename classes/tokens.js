@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
     seed = 'este-es-el-seed-de-mi-app-secreto';
     caducidad = '30d';
 
-    getJwtToken( payload: any ): string {
+    getJwtToken( payload ) {
         return jwt.sign({
             usuario: payload
         }, this.seed, { expiresIn: this.caducidad });
