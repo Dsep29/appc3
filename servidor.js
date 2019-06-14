@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 
 // rutas
-  const userRoutes = require('/routes/usuarios');
+  const userRoutes = require('./routes/usuarios');
 // import postRoutes from './routes/post';
 // import ordenRoutes from './routes/ordenes';
 // import materialRoutes from './routes/materiales';
