@@ -6,10 +6,6 @@ const path = require('path');
 const app = express();
 const server = http.createServer(app);
 
-const bcrypt = require('bcrypt');
-const Token = require('../classes/token');
-
-
 // rutas
  // const userRoutes = requiere('/routes/usuario');
 // import postRoutes from './routes/post';
