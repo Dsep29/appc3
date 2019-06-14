@@ -86,4 +86,5 @@ ordenSchema.pre<IOrden>('save', function( next ) {
     next();
 });
 
-export const Orden = model<IOrden>('Orden', ordenSchema);
+// export const Orden = model<IOrden>('Orden', ordenSchema);
+module.exports =  model<IOrden>('Orden', ordenSchema);;
