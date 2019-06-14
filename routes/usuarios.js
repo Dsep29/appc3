@@ -8,7 +8,7 @@ const  Orden  = require('../models/orden.model');
 const userRoutes = Router(); // rutas consulta usuario
 
 // Login
-userRoutes.post('/login', (req: Request, res: Response ) => {
+userRoutes.post('/login', (req, res ) => {
     const body = req.body;
    
     Usuario.findOne({ email: body.email }, ( err, userDB ) => {

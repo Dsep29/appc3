@@ -5,10 +5,13 @@ const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
-// const io = socketio.listen(server);
+
+const bcrypt = require('bcrypt');
+const Token = require('../classes/token');
+
 
 // rutas
-import userRoutes from '/routes/usuario';
+ // const userRoutes = requiere('/routes/usuario');
 // import postRoutes from './routes/post';
 // import ordenRoutes from './routes/ordenes';
 // import materialRoutes from './routes/materiales';
@@ -16,7 +19,7 @@ import userRoutes from '/routes/usuario';
 // const userRoutes = require( './routes/usuarios');
 
  // Rutas de mi app
-server.app.use('/user', userRoutes );
+// server.app.use('/user', userRoutes );
 // server.app.use('/posts', postRoutes );
 // server.app.use('/orden', ordenRoutes );
 // server.app.use('/material', materialRoutes );
@@ -34,9 +37,13 @@ server.listen(app.get('port'), ()=>{
     console.log(`server port: ${app.get('port')}` );    
 });
 
+
+// inicio
 app.get("/", function(req, res) {
     //when we get an http get request to the root/homepage
     res.send("Hello World");
   });
+
+  
 
   
