@@ -12,8 +12,8 @@ export default class Server {
     constructor() {
         this.app = express();
     }
-
-    start( callback: Function ) {
+            // Function
+    start( callback:any ) {
          var port = process.env.PORT || 8080; // linea nueva
          this.app.set('port', port); // linea nueva
          this.port = port; // nueva linea

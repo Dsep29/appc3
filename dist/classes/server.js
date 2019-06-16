@@ -10,6 +10,7 @@ class Server {
     constructor() {
         this.app = express_1.default();
     }
+    // Function
     start(callback) {
         var port = process.env.PORT || 8080; // linea nueva
         this.app.set('port', port); // linea nueva
