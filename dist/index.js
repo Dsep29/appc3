@@ -43,4 +43,6 @@ mongoose_1.default.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.
 server.start(() => {
     console.log(`Servidor corriendo en puerto ${server.port}`);
 });
-// module.exports = server;
+server.app.get('/', function (req, res) {
+    res.send('Hello World!');
+});

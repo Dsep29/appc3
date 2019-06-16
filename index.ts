@@ -59,4 +59,7 @@ server.start( () => {
     console.log(`Servidor corriendo en puerto ${ server.port }`);
 });
 
-// module.exports = server;
+server.app.get('/', function (req, res) {
+    res.send('Hello World!');
+  });
+  
