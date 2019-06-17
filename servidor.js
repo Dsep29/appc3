@@ -1,4 +1,4 @@
-require('index');
+require('dist/index.js');
 // const express = require('index');
 // const http = require('http');
 // const mongoose = require('mongoose');

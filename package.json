@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon servidor.js",
+    "start": "node dist/",
     "start:watch": "nodemon",
     "prestart:prod": "tsc",
     "prod": "tsc && nodemon dist/index.js",
     "build": "tsc",
-    "postinstall": "tsc",
+    "postinstall": "npm run start",
     "start:prod": "nodemon dist/index.js"
   },
   "author": "Diego",
@@ -30,10 +30,13 @@
     "mongoose": "^5.4.11",
     "ts-node-dev": "^1.0.0-pre.40",
     "typescript": "^3.5.2",
-    "uniqid": "^5.0.3"
+    "uniqid": "^5.0.3",
+    "nodemon": "^1.19.1"
   },
-  "devDependencies": {},
-  "description": "",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "description": "C3Chile - APP",
   "engines": {
     "node": "10.15.3",
     "npm": "6.9.0"
