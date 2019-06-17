@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "node dist/",
+    "start": "node dist/index.js",
     "start:watch": "nodemon",
     "prestart:prod": "tsc",
     "prod": "tsc && nodemon dist/index.js",
