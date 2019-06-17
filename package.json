@@ -1,13 +1,13 @@
 {
   "name": "fepasa",
   "version": "1.0.0",
-  "main": "dist/index.ts",
+  "main": "index.ts",
   "scripts": {
-    "start": "node  dist/index.js",
-    "prod": "tsc && node dist/index.js",
+    "start": "nodemon  dist/",
+    "prod": "tsc && nodemon dist/index.js",
     "build": "tsc",
     "postinstall": "tsc",
-    "start:prod": "node dist/index.js"
+    "start:prod": "nodemon dist/index.js"
   },
   "author": "Diego",
   "license": "ISC",

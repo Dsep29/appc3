@@ -12,6 +12,8 @@ const post_1 = __importDefault(require("./routes/post"));
 const ordenes_1 = __importDefault(require("./routes/ordenes"));
 const cors_1 = __importDefault(require("cors"));
 const materiales_1 = __importDefault(require("./routes/materiales"));
+const express_1 = __importDefault(require("express"));
+const path_1 = __importDefault(require("path"));
 // var app = express();
 // var server = http.createServer(app);
 // var serve = new http.Server(app);
@@ -23,6 +25,7 @@ server.app.use(body_parser_1.default.json());
 server.app.use(express_fileupload_1.default({ useTempFiles: true })); // para importar archivos y usar archivos temp
 //config Cors
 server.app.use(cors_1.default({ origin: true, credentials: true }));
+server.app.use(express_1.default.static(path_1.default.join(__dirname, 'dist')));
 // Rutas de mi app
 server.app.use('/user', usuario_1.default);
 server.app.use('/posts', post_1.default);
@@ -39,6 +42,7 @@ mongoose_1.default.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.
         throw console.log(err);
     console.log('Base de datos ONLINE');
 });
+// const CLIENT_FILES = join(__dirname, '..', '..', 'client', 'dist');
 //Levantar express
 server.start(() => {
     console.log(`Servidor corriendo en puerto ${server.port}`);
