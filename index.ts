@@ -10,6 +10,9 @@ import ordenRoutes from './routes/ordenes';
 
 import Cors from 'cors';
 import materialRoutes from './routes/materiales';
+import express from 'express';
+import { join } from 'path';
+import path from 'path';
 
 
 // var app = express();
@@ -32,6 +35,8 @@ server.app.use( fileUpload({ useTempFiles: true }) ); // para importar archivos 
 
 server.app.use( Cors({ origin:true, credentials: true}) );
 
+server.app.use(express.static(path.join(__dirname, 'dist')));
+
 // Rutas de mi app
 server.app.use('/user', userRoutes );
 server.app.use('/posts', postRoutes );
@@ -52,6 +57,8 @@ mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?r
    if ( err ) throw  console.log(err);
    console.log('Base de datos ONLINE');
 });
+
+// const CLIENT_FILES = join(__dirname, '..', '..', 'client', 'dist');
 
 
 //Levantar express
