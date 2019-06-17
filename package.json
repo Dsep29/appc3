@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon  dist/",
+    "start": "nodemon servidor.js",
+    "start:watch": "nodemon",
+    "prestart:prod": "tsc",
     "prod": "tsc && nodemon dist/index.js",
     "build": "tsc",
     "postinstall": "tsc",
