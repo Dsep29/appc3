@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "node index.js",    
+    "start": "node  dist/index.js",    
     "tsc": "tsc",
     "prod": "tsc && node dist/",
     "build": "tsc",
