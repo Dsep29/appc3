@@ -8,7 +8,7 @@
     "tsc": "tsc",
     "prod": "tsc && node dist/",
     "build": "tsc",
-    "postinstall": "npm run dist/"
+    "postinstall": "npm run build/"
   },
   "author": "Diego",
   "license": "ISC",
