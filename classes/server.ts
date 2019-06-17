@@ -13,8 +13,7 @@ export default class Server {
         this.app = express();
     }
             // Function
-    start( callback:any ) {
-         // var port = process.env.PORT || 8080; // linea nueva
+    start( callback: any ) {
          var port = process.env.PORT || 5000;
          this.app.set('port', port); // linea nueva
          this.port = port; // nueva linea

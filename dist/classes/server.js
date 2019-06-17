@@ -12,7 +12,6 @@ class Server {
     }
     // Function
     start(callback) {
-        // var port = process.env.PORT || 8080; // linea nueva
         var port = process.env.PORT || 5000;
         this.app.set('port', port); // linea nueva
         this.port = port; // nueva linea

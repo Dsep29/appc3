@@ -28,10 +28,11 @@ server.app.use('/user', usuario_1.default);
 server.app.use('/posts', post_1.default);
 server.app.use('/orden', ordenes_1.default);
 server.app.use('/material', materiales_1.default);
-// var port = process.env.PORT || 8080; // linea nueva
+// var port = process.env.PORT || 5000 ; // linea nueva
 // server.app.set('port', port); // linea nueva
 // console.log('port:', port);
 // server.app.use(express.json());
+// server.app.listen(process.env.PORT || 5000 )
 // Conectar DB mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority
 //  mongodb://localhost:27017/fepasa
 mongoose_1.default.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true }, (err) => {
