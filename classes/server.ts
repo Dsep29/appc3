@@ -14,7 +14,8 @@ export default class Server {
     }
             // Function
     start( callback:any ) {
-         var port = process.env.PORT || 8080; // linea nueva
+         // var port = process.env.PORT || 8080; // linea nueva
+         var port = process.env.PORT;
          this.app.set('port', port); // linea nueva
          this.port = port; // nueva linea
          this.app.listen( this.port, callback );
