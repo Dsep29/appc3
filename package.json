@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "node dist/",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.ts",    
     "tsc": "tsc",
     "prod": "tsc && node dist/",
     "build": "tsc",
-    "postinstall": "npm run build"
+    "postinstall": "npm run start"
   },
   "author": "Diego",
   "license": "ISC",
@@ -37,6 +36,7 @@
   "engines": {
     "node": "10.15.3",
     "npm": "6.9.0",
-    "tsc": "3.4.1"
+    "typescript": "3.5.2",
+    "express": "4.17.0"
   }
 }
