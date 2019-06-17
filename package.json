@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon dist/index.js",
+    "start": "nodemon index.ts",
     "start:watch": "nodemon",    
     "postinstall": "tsc"      
   },
