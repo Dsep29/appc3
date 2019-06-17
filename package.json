@@ -4,10 +4,9 @@
   "main": "index.ts",
   "scripts": {
     "start": "node  dist/",    
-    "tsc": "tsc",
     "prod": "tsc && node dist/",
     "build": "tsc",
-    "postinstall": "npm run start"
+    "postinstall": "npm run build"
   },
   "author": "Diego",
   "license": "ISC",
