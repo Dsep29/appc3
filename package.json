@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "node  dist/",    
-    "prod": "tsc && node dist/",
+    "start": "node  dist/index.js",    
+    "prod": "tsc && node dist/index.js",
     "build": "tsc",
-    "postinstall": "npm run build"
+    "postinstall": "npm run prod"
   },
   "author": "Diego",
   "license": "ISC",
