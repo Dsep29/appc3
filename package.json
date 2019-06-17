@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon index.ts",
-    "start:watch": "nodemon",    
-    "postinstall": "tsc"      
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec ts-node -- index.ts",
+    "ts-node": "ts-node index.ts",
+    "build": "tsc"    
   },
   "author": "Diego",
   "license": "ISC",
