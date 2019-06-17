@@ -11,14 +11,7 @@ import ordenRoutes from './routes/ordenes';
 import Cors from 'cors';
 import materialRoutes from './routes/materiales';
 import express from 'express';
-import { join } from 'path';
 import path from 'path';
-
-
-// var app = express();
-// var server = http.createServer(app);
-// var serve = new http.Server(app);
-
 
 const server = new Server();
 
@@ -58,17 +51,22 @@ mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?r
    console.log('Base de datos ONLINE');
 });
 
-// const CLIENT_FILES = join(__dirname, '..', '..', 'client', 'dist');
-
-
 //Levantar express
 server.start( () => {
     console.log(`Servidor corriendo en puerto ${ server.port }`);
 });
 
-// server.app.get('/', function (req, res) {
-//     res.send('Hello World!');
-//   });
+server.app.get('/', function (req, res) {
+    res.send('Hello World!');
+  });
 
-  // parte del script de Json = "test": "echo \"Error: no test specified\" && exit 1",
+//   "scripts": {
+//     "start": "nodemon dist/index.js",
+//     "start:watch": "nodemon",
+//     "prestart:prod": "tsc",
+//     "prod": "tsc && nodemon dist/index.js",
+//     "build": "tsc",
+//     "postinstall": "tsc",
+//     "start:prod": "nodemon dist/index.js"
+//   },
   

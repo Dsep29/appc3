@@ -14,9 +14,6 @@ const cors_1 = __importDefault(require("cors"));
 const materiales_1 = __importDefault(require("./routes/materiales"));
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
-// var app = express();
-// var server = http.createServer(app);
-// var serve = new http.Server(app);
 const server = new server_1.default();
 // Body parser
 server.app.use(body_parser_1.default.urlencoded({ extended: true }));
@@ -42,12 +39,19 @@ mongoose_1.default.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.
         throw console.log(err);
     console.log('Base de datos ONLINE');
 });
-// const CLIENT_FILES = join(__dirname, '..', '..', 'client', 'dist');
 //Levantar express
 server.start(() => {
     console.log(`Servidor corriendo en puerto ${server.port}`);
 });
-// server.app.get('/', function (req, res) {
-//     res.send('Hello World!');
-//   });
-// parte del script de Json = "test": "echo \"Error: no test specified\" && exit 1",
+server.app.get('/', function (req, res) {
+    res.send('Hello World!');
+});
+//   "scripts": {
+//     "start": "nodemon dist/index.js",
+//     "start:watch": "nodemon",
+//     "prestart:prod": "tsc",
+//     "prod": "tsc && nodemon dist/index.js",
+//     "build": "tsc",
+//     "postinstall": "tsc",
+//     "start:prod": "nodemon dist/index.js"
+//   },
