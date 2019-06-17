@@ -47,7 +47,7 @@ mongoose_1.default.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.
 server.start(() => {
     console.log(`Servidor corriendo en puerto ${server.port}`);
 });
-server.app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
+// server.app.get('/', function (req, res) {
+//     res.send('Hello World!');
+//   });
 // parte del script de Json = "test": "echo \"Error: no test specified\" && exit 1",
