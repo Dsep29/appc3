@@ -26,7 +26,8 @@
     "mongoose": "^5.4.11",
     "ts-node-dev": "^1.0.0-pre.40",
     "typescript": "^3.5.2",
-    "uniqid": "^5.0.3"
+    "uniqid": "^5.0.3",
+    "bcrypt": "^3.0.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -37,7 +38,8 @@
     "@types/mongoose": "^5.3.12",
     "@types/node": "^12.0.8",
     "@types/uniqid": "^4.1.2",
-    "tslint": "^5.17.0"
+    "tslint": "^5.17.0",
+    "bcrypt": "^3.0.0"
   },
   "description": "C3Chile - APP",
   "engines": {
