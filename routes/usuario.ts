@@ -18,6 +18,7 @@ userRoutes.post("/login", (req: Request, res: Response ) => {
         if ( !userDB ) {
             return res.json({
                 ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
                 mensaje: "Usuario/contraseña no son correctos"
             });
         }
@@ -26,6 +27,7 @@ userRoutes.post("/login", (req: Request, res: Response ) => {
                const tokenUser = Token.getJwtToken({
                 _id: userDB._id,
                 nombre: userDB.nombre,
+// tslint:disable-next-line: object-literal-sort-keys
                 email: userDB.email,
                 avatar: userDB.avatar,
                 rol: userDB.rol
@@ -39,6 +41,7 @@ userRoutes.post("/login", (req: Request, res: Response ) => {
         } else {
             return res.json({
                 ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
                 mensaje: "Usuario/contraseña no son correctos ***"
             });
         }
@@ -50,6 +53,7 @@ userRoutes.post("/create", ( req: Request, res: Response ) => {
 
     const user = {
         nombre   : req.body.nombre,
+// tslint:disable-next-line: object-literal-sort-keys
         email    : req.body.email,
         password : bcrypt.hashSync(req.body.password, 10),
         avatar   : req.body.avatar,
@@ -61,6 +65,7 @@ userRoutes.post("/create", ( req: Request, res: Response ) => {
         const tokenUser = Token.getJwtToken({
             _id: userDB._id,
             nombre: userDB.nombre,
+// tslint:disable-next-line: object-literal-sort-keys
             email: userDB.email,
             avatar: userDB.avatar,
             rol: userDB.rol
@@ -74,6 +79,7 @@ userRoutes.post("/create", ( req: Request, res: Response ) => {
     }).catch( (err) => {
         res.json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             err
         });
     });
@@ -84,6 +90,7 @@ userRoutes.post("/update", verificaToken, (req: any, res: Response ) => {
 
     const user = {
         nombre: req.body.nombre || req.usuario.nombre,
+// tslint:disable-next-line: object-literal-sort-keys
         email : req.body.email  || req.usuario.email,
         avatar: req.body.avatar || req.usuario.avatar,
         rol: req.body.rol       || req.usuario.rol
@@ -96,6 +103,7 @@ userRoutes.post("/update", verificaToken, (req: any, res: Response ) => {
         if ( !userDB ) {
             return res.json({
                 ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
                 mensaje: "No existe un usuario con ese ID"
             });
         }
@@ -103,6 +111,7 @@ userRoutes.post("/update", verificaToken, (req: any, res: Response ) => {
         const tokenUser = Token.getJwtToken({
             _id: userDB._id,
             nombre: userDB.nombre,
+// tslint:disable-next-line: object-literal-sort-keys
             email: userDB.email,
             avatar: userDB.avatar,
             rol: userDB.rol
@@ -135,6 +144,7 @@ userRoutes.put("/crear-orden",  ( req: any, res: Response ) => {
 
     const orden = {
         ubicacion   : req.body.ubicacion,
+// tslint:disable-next-line: object-literal-sort-keys
         detalle     : req.body.detalle,
         fecha       : req.body.fecha,
         comentario  : req.body.comentario,
@@ -160,6 +170,7 @@ userRoutes.put("/crear-orden",  ( req: any, res: Response ) => {
     }).catch( (err) => {
         res.json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             err
         });
     });
