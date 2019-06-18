@@ -13,7 +13,7 @@ export default class Server {
     }
             // Function
     public start( callback: any ) {
-         let port = process.env.PORT || 5000;
+         const port = process.env.PORT || 5000;
          this.app.set("port", port); // linea nueva
          this.port = port; // nueva linea
          this.app.listen( this.port, callback );
