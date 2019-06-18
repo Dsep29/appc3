@@ -11,14 +11,14 @@
   "author": "Diego",
   "license": "ISC",
   "dependencies": {
-    "@types/bcrypt": "^3.0.0",
+    "@types/bcrypt": "^3.0.6",
     "@types/cors": "^2.8.4",
     "@types/express": "^4.17.0",
     "@types/express-fileupload": "^0.4.0",
     "@types/jsonwebtoken": "^8.3.0",
     "@types/mongoose": "^5.3.12",
     "@types/uniqid": "^4.1.2",
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -30,7 +30,7 @@
     "uniqid": "^5.0.3"
   },
   "devDependencies": {
-    "@types/bcrypt": "^3.0.0",
+    "@types/bcrypt": "^3.0.6",
     "@types/cors": "^2.8.4",
     "@types/express": "^4.17.0",
     "@types/express-fileupload": "^0.4.0",
