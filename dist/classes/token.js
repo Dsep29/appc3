@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class Token {
+    // tslint:disable-next-line: no-empty
     constructor() { }
     static getJwtToken(payload) {
         return jsonwebtoken_1.default.sign({
@@ -24,6 +25,6 @@ class Token {
         });
     }
 }
-Token.seed = 'este-es-el-seed-de-mi-app-secreto';
-Token.caducidad = '30d';
+Token.seed = "este-es-el-seed-de-mi-app-secreto";
+Token.caducidad = "30d";
 exports.default = Token;

@@ -8,6 +8,7 @@ const ordenSchema = new mongoose_1.Schema({
     ztrabajo: {
         type: String,
     },
+    // tslint:disable-next-line: object-literal-sort-keys
     hito: {
         type: String,
     },
@@ -31,14 +32,16 @@ const ordenSchema = new mongoose_1.Schema({
         }],
     usuario: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: 'Usuario',
-        required: [true, 'Debe de existir una referencia a un usuario'] // Obligatorio
+        // tslint:disable-next-line: object-literal-sort-keys
+        ref: "Usuario",
+        required: [true, "Debe de existir una referencia a un usuario"] // Obligatorio
         // default: ['Pendiente']
     },
     posteo: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: 'Post',
-        required: [true, 'Información necesaria']
+        // tslint:disable-next-line: object-literal-sort-keys
+        ref: "Post",
+        required: [true, "Información necesaria"]
     },
     lugar: {
         type: String,
@@ -51,8 +54,8 @@ const ordenSchema = new mongoose_1.Schema({
     },
 });
 // obtengo la hora actual
-ordenSchema.pre('save', function (next) {
+ordenSchema.pre("save", function (next) {
     this.fecha = new Date();
     next();
 });
-exports.Orden = mongoose_1.model('Orden', ordenSchema);
+exports.Orden = mongoose_1.model("Orden", ordenSchema);

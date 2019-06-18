@@ -12,8 +12,8 @@ class Server {
     }
     // Function
     start(callback) {
-        var port = process.env.PORT || 5000;
-        this.app.set('port', port); // linea nueva
+        const port = process.env.PORT || 5000;
+        this.app.set("port", port); // linea nueva
         this.port = port; // nueva linea
         this.app.listen(this.port, callback);
         // this.app.listen( this.port, callback );

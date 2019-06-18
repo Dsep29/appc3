@@ -4,8 +4,10 @@ const mongoose_1 = require("mongoose");
 const MaterialSchema = new mongoose_1.Schema({
     nombre: {
         type: String,
-        required: [true, 'El Nombre es necesario']
+        // tslint:disable-next-line: object-literal-sort-keys
+        required: [true, "El Nombre es necesario"]
     },
+    // tslint:disable-next-line: object-literal-sort-keys
     codigo: {
         type: String,
     },
@@ -17,7 +19,8 @@ const MaterialSchema = new mongoose_1.Schema({
     },
     ordenid: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: 'Orden',
+        // tslint:disable-next-line: object-literal-sort-keys
+        ref: "Orden",
     }
 });
-exports.Material = mongoose_1.model('Material', MaterialSchema);
+exports.Material = mongoose_1.model("Material", MaterialSchema);

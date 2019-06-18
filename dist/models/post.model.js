@@ -13,6 +13,7 @@ const postSchema = new mongoose_1.Schema({
         type: String
     },
     // debe ir con []
+    // tslint:disable-next-line: object-literal-sort-keys
     imgs: [{
             type: String
         }],
@@ -42,13 +43,14 @@ const postSchema = new mongoose_1.Schema({
     },
     usuario: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: 'Usuario',
-        required: [true, 'Debe de existir una referencia a un usuario'] // Obligatorio
+        // tslint:disable-next-line: object-literal-sort-keys
+        ref: "Usuario",
+        required: [true, "Debe de existir una referencia a un usuario"] // Obligatorio
     }
 });
 // guardar post
-postSchema.pre('save', function (next) {
+postSchema.pre("save", function (next) {
     this.created = new Date();
     next();
 });
-exports.Post = mongoose_1.model('Post', postSchema);
+exports.Post = mongoose_1.model("Post", postSchema);
