@@ -61,6 +61,7 @@ postRoutes.post( "/upload", [ verificaToken ], async (req: any, res: Response) =
     if ( !req.files ) { // no hay archivo en la ruta
         return res.status(400).json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             mensaje: "No se subió ningun archivo"
         });
     }
@@ -70,6 +71,7 @@ postRoutes.post( "/upload", [ verificaToken ], async (req: any, res: Response) =
     if ( !file ) {
         return res.status(400).json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             mensaje: "No se subió ningun archivo - image"
         });
     }
@@ -77,6 +79,7 @@ postRoutes.post( "/upload", [ verificaToken ], async (req: any, res: Response) =
     if ( !file.mimetype.includes("image") ) {
         return res.status(400).json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             mensaje: "Lo que subió no es una imagen"
         });
     }
@@ -85,6 +88,7 @@ postRoutes.post( "/upload", [ verificaToken ], async (req: any, res: Response) =
 
     res.json({
         ok: true,
+// tslint:disable-next-line: object-literal-sort-keys
         file: file.mimetype
     });
 
@@ -184,6 +188,7 @@ postRoutes.put("/updatePost/:posteoID", verificaToken, (req, res) => {
      if ( !postDB ) {
         return res.json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             mensaje: "No existe un usuario con ese ID"
         });
     }
@@ -217,11 +222,14 @@ postRoutes.post("/buscar",  async (req: any, res: Response) => {
     };
     // hacemos el llamado directamente al metodo find() y le pasamos una función callback
     await Post.find(query, (error, ordenes) => {
+// tslint:disable-next-line: no-console
         console.log("desde query", ordenes);
         if (error) {
+// tslint:disable-next-line: no-console
         console.log(error);
         return res.status(500).json({
           ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
           error
         });
       }

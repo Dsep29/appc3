@@ -16,6 +16,7 @@ ordenRoutes.post( "/upload/orden", [verificaToken], async (req: any, res: Respon
     if ( !req.files ) { // no hay archivo en la ruta
         return res.status(400).json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             mensaje: "No se subió ningun archivo"
         });
     }
@@ -25,6 +26,7 @@ ordenRoutes.post( "/upload/orden", [verificaToken], async (req: any, res: Respon
     if ( !file ) {
         return res.status(400).json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             mensaje: "No se subió ningun archivo - image"
         });
     }
@@ -32,6 +34,7 @@ ordenRoutes.post( "/upload/orden", [verificaToken], async (req: any, res: Respon
     if ( !file.mimetype.includes("image") ) {
         return res.status(400).json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             mensaje: "Lo que subió no es una imagen"
         });
     }
@@ -40,6 +43,7 @@ ordenRoutes.post( "/upload/orden", [verificaToken], async (req: any, res: Respon
 
     res.json({
         ok: true,
+// tslint:disable-next-line: object-literal-sort-keys
         file: file.mimetype
     });
 
@@ -62,6 +66,7 @@ ordenRoutes.post("/", [verificaToken], (req: any, resp: Response) => {
 
         resp.json({
             ok: true,
+// tslint:disable-next-line: object-literal-sort-keys
             Orden: postDB
         });
 
@@ -107,6 +112,7 @@ ordenRoutes.put("/updateOrden/:ordenID", verificaToken, (req, res) => {
         if ( !ordDB ) {
            return res.json({
                ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
                mensaje: "No existe un Orden con ese ID"
            });
        }
@@ -135,6 +141,7 @@ ordenRoutes.get("/verordenes/:idpost",  async (req: any, res: Response) => {
     if ( !ordenes) {
           return res.json({
             ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
             mensaje: "No existe un Orden con ese ID de Post"
         });
         }

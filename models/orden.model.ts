@@ -10,6 +10,7 @@ const ordenSchema = new Schema({
         type: String,
         // required: [ true, 'Información necesaria' ]
     },
+// tslint:disable-next-line: object-literal-sort-keys
     hito: {
         type: String,
         // required: [ true, 'Información Necesaria' ]
@@ -38,12 +39,14 @@ const ordenSchema = new Schema({
     }],
     usuario: {
         type: Schema.Types.ObjectId,
+// tslint:disable-next-line: object-literal-sort-keys
         ref: "Usuario",
         required: [ true, "Debe de existir una referencia a un usuario" ] // Obligatorio
         // default: ['Pendiente']
     },
     posteo: {
         type: Schema.Types.ObjectId,
+// tslint:disable-next-line: object-literal-sort-keys
         ref: "Post",
         required: [ true, "Información necesaria" ]
 
@@ -64,20 +67,20 @@ const ordenSchema = new Schema({
 });
 
 interface IOrden extends Document {
-    grupo: String;
-    ztrabajo: String;
-    hito: String;
+    grupo: string;
+    ztrabajo: string;
+    hito: string;
     fecha: Date;
-    materiales: String[];
-    desde: String;
-    hasta: String;
-    operarios: String;
-    imgs: String[];
-    usuario: String;
-    posteo: String;
-    lugar: String;
-    observaciones: String;
-    desarrollo: String;
+    materiales: string[];
+    desde: string;
+    hasta: string;
+    operarios: string;
+    imgs: string[];
+    usuario: string;
+    posteo: string;
+    lugar: string;
+    observaciones: string;
+    desarrollo: string;
 }
 
 // obtengo la hora actual

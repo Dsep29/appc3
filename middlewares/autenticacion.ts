@@ -7,6 +7,7 @@ export const verificaToken = ( req: any, res: Response, next: NextFunction  ) =>
 
     Token.comprobarToken( userToken )
         .then(  (decoded: any) => {
+// tslint:disable-next-line: no-console
             console.log("Decoded", decoded );
             req.usuario = decoded.usuario;
             next();
@@ -15,6 +16,7 @@ export const verificaToken = ( req: any, res: Response, next: NextFunction  ) =>
 
             res.json({
                 ok: false,
+// tslint:disable-next-line: object-literal-sort-keys
                 mensaje: "Token no es correcto"
             });
 

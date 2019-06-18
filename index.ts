@@ -45,15 +45,19 @@ server.app.use("/material", materialRoutes );
 mongoose.connect("mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/fepasa?retryWrites=true&w=majority",
                 { useNewUrlParser: true, useCreateIndex: true }, ( err ) => {
 
+// tslint:disable-next-line: no-console
    if ( err ) { throw  console.log(err); }
+// tslint:disable-next-line: no-console
    console.log("Base de datos ONLINE");
 });
 
 // Levantar express
 server.start( () => {
+// tslint:disable-next-line: no-console
     console.log(`Servidor corriendo en puerto ${ server.port }`);
 });
 
+// tslint:disable-next-line: only-arrow-functions
 server.app.get("/", function(req, res) {
     res.send("Hello World!");
   });

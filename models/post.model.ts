@@ -13,6 +13,7 @@ const postSchema = new Schema({
         type: String
     },
     // debe ir con []
+// tslint:disable-next-line: object-literal-sort-keys
     imgs: [{
         type: String
     }],
@@ -42,6 +43,7 @@ const postSchema = new Schema({
     },
     usuario: { // relacion Usuario
         type: Schema.Types.ObjectId,
+// tslint:disable-next-line: object-literal-sort-keys
         ref: "Usuario",
         required: [ true, "Debe de existir una referencia a un usuario" ] // Obligatorio
     }

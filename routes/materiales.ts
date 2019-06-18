@@ -16,6 +16,7 @@ materialRoutes.post("/crear", verificaToken,  (req: any, resp: Response) => {
         // await postDB.populate('usuario', '-password').populate('post').execPopulate();
             resp.json({
             ok: true,
+// tslint:disable-next-line: object-literal-sort-keys
             Materiales: postDB
         });
 
@@ -36,6 +37,7 @@ materialRoutes.get("/getmaterial", async (req: any, res: Response) => {
 
     res.json({
         ok: true,
+// tslint:disable-next-line: object-literal-sort-keys
         material
     });
 });

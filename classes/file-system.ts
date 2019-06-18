@@ -7,12 +7,13 @@ import uniqid from "uniqid";
 
 export default class FileSystem {
 
-
+// tslint:disable-next-line: no-empty
     constructor() { }
     public guardarImagenTemporal( file: FileUpload, userId: string ) {
 
         return new Promise(  (resolve, reject) => {
             // Crear carpetas
+// tslint:disable-next-line: no-shadowed-variable
             const path = this.crearCarpetaUsuario( userId );
 
             // Nombre archivo
@@ -112,6 +113,7 @@ export default class FileSystem {
 
         return new Promise(  (resolve, reject) => {
             // Crear carpetas
+// tslint:disable-next-line: no-shadowed-variable
             const path = this.crearCarpetaOrden( ordenId );
 
             // Nombre archivo
