@@ -1,29 +1,23 @@
-import { Response, Request, NextFunction } from 'express';
-import Token from '../classes/token';
- 
+import { NextFunction, Request, Response } from "express";
+import Token from "../classes/token";
 
 export const verificaToken = ( req: any, res: Response, next: NextFunction  ) => {
 
-    const userToken = req.get('x-token') || '';
+    const userToken = req.get("x-token") || "";
 
     Token.comprobarToken( userToken )
         .then(  (decoded: any) => {
-            console.log('Decoded', decoded );
+            console.log("Decoded", decoded );
             req.usuario = decoded.usuario;
             next();
         })
-        .catch( err => {
+        .catch( (err) => {
 
             res.json({
                 ok: false,
-                mensaje: 'Token no es correcto'
+                mensaje: "Token no es correcto"
             });
 
         });
 
-
-
-
-}
-
-
+};

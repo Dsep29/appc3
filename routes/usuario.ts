@@ -1,24 +1,24 @@
-import { Router, Request, Response } from 'express';
-import { Usuario } from '../models/usuario.model';
-import bcrypt from 'bcrypt';
-import Token from '../classes/token';
-import { verificaToken } from '../middlewares/autenticacion';
-import { Orden } from '../models/orden.model';
+import bcrypt from "bcrypt";
+import { Request, Response, Router } from "express";
+import Token from "../classes/token";
+import { verificaToken } from "../middlewares/autenticacion";
+import { Orden } from "../models/orden.model";
+import { Usuario } from "../models/usuario.model";
 
 const userRoutes = Router(); // rutas consulta usuario
 
 // Login
-userRoutes.post('/login', (req: Request, res: Response ) => {
+userRoutes.post("/login", (req: Request, res: Response ) => {
     const body = req.body;
-   
+
     Usuario.findOne({ email: body.email }, ( err, userDB ) => {
-             
-        if ( err ) throw err;
+
+        if ( err ) { throw err; }
 
         if ( !userDB ) {
             return res.json({
                 ok: false,
-                mensaje: 'Usuario/contraseña no son correctos'
+                mensaje: "Usuario/contraseña no son correctos"
             });
         }
 
@@ -30,23 +30,23 @@ userRoutes.post('/login', (req: Request, res: Response ) => {
                 avatar: userDB.avatar,
                 rol: userDB.rol
             });
-           
-            res.json({
+
+               res.json({
                 ok: true,
-                token: tokenUser                                
+                token: tokenUser
                });
 
         } else {
             return res.json({
                 ok: false,
-                mensaje: 'Usuario/contraseña no son correctos ***'
+                mensaje: "Usuario/contraseña no son correctos ***"
             });
         }
-    })
+    });
 });
 
 // Crear un usuario
-userRoutes.post('/create', ( req: Request, res: Response ) => {
+userRoutes.post("/create", ( req: Request, res: Response ) => {
 
     const user = {
         nombre   : req.body.nombre,
@@ -56,7 +56,7 @@ userRoutes.post('/create', ( req: Request, res: Response ) => {
         rol      : req.body.rol
     };
 
-    Usuario.create( user ).then( userDB => {
+    Usuario.create( user ).then( (userDB) => {
 
         const tokenUser = Token.getJwtToken({
             _id: userDB._id,
@@ -71,8 +71,7 @@ userRoutes.post('/create', ( req: Request, res: Response ) => {
             token: tokenUser
         });
 
-
-    }).catch( err => {
+    }).catch( (err) => {
         res.json({
             ok: false,
             err
@@ -81,23 +80,23 @@ userRoutes.post('/create', ( req: Request, res: Response ) => {
 });
 
 // Actualizar usuario
-userRoutes.post('/update', verificaToken, (req: any, res: Response ) => {
+userRoutes.post("/update", verificaToken, (req: any, res: Response ) => {
 
     const user = {
         nombre: req.body.nombre || req.usuario.nombre,
         email : req.body.email  || req.usuario.email,
         avatar: req.body.avatar || req.usuario.avatar,
         rol: req.body.rol       || req.usuario.rol
-    }
+    };
 
     Usuario.findByIdAndUpdate( req.usuario._id, user, { new: true }, (err, userDB) => {
 
-        if ( err ) throw err;
+        if ( err ) { throw err; }
 
         if ( !userDB ) {
             return res.json({
                 ok: false,
-                mensaje: 'No existe un usuario con ese ID'
+                mensaje: "No existe un usuario con ese ID"
             });
         }
 
@@ -114,13 +113,12 @@ userRoutes.post('/update', verificaToken, (req: any, res: Response ) => {
             token: tokenUser
         });
 
-
     });
 
 });
 
 // ruta de obtener token, datos de usuario
-userRoutes.get('/', [ verificaToken ], ( req: any, res: Response ) => {
+userRoutes.get("/", [ verificaToken ], ( req: any, res: Response ) => {
 
     const usuario = req.usuario;
 
@@ -132,7 +130,7 @@ userRoutes.get('/', [ verificaToken ], ( req: any, res: Response ) => {
 });
 
 // ruta crear Orden
-userRoutes.put('/crear-orden',  ( req: any, res: Response ) => {
+userRoutes.put("/crear-orden",  ( req: any, res: Response ) => {
     // const usuario = req.userDB.nombre;
 
     const orden = {
@@ -140,10 +138,10 @@ userRoutes.put('/crear-orden',  ( req: any, res: Response ) => {
         detalle     : req.body.detalle,
         fecha       : req.body.fecha,
         comentario  : req.body.comentario,
-        // creador     : 
+        // creador     :
     };
 
-    Orden.create( orden ).then( ordenDB => {
+    Orden.create( orden ).then( (ordenDB) => {
 
         // const tokenUser = Token.getJwtToken({
         //     _id: ordenDB._id,
@@ -159,13 +157,12 @@ userRoutes.put('/crear-orden',  ( req: any, res: Response ) => {
             // token: tokenUser
         });
 
-    }).catch( err => {
+    }).catch( (err) => {
         res.json({
             ok: false,
             err
         });
     });
 });
-
 
 export default userRoutes;

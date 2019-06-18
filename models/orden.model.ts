@@ -1,4 +1,4 @@
-import { Schema, model, Document } from 'mongoose';
+import { Document, model, Schema } from "mongoose";
 
 const ordenSchema = new Schema({
 
@@ -15,7 +15,7 @@ const ordenSchema = new Schema({
         // required: [ true, 'Información Necesaria' ]
     },
     fecha: {
-        type: Date        
+        type: Date
     },
     materiales: [{
         type: String,
@@ -33,20 +33,20 @@ const ordenSchema = new Schema({
         type: String,
         // required: [ true, 'Necesita información']
     },
-    imgs:[{
+    imgs: [{
         type: String
     }],
     usuario: {
         type: Schema.Types.ObjectId,
-        ref: 'Usuario',
-        required: [ true, 'Debe de existir una referencia a un usuario' ] // Obligatorio
+        ref: "Usuario",
+        required: [ true, "Debe de existir una referencia a un usuario" ] // Obligatorio
         // default: ['Pendiente']
     },
     posteo: {
         type: Schema.Types.ObjectId,
-        ref: 'Post',
-        required: [ true, 'Información necesaria' ]
-        
+        ref: "Post",
+        required: [ true, "Información necesaria" ]
+
     },
     lugar: {
         type: String,
@@ -64,26 +64,26 @@ const ordenSchema = new Schema({
 });
 
 interface IOrden extends Document {
-    grupo: String,
-    ztrabajo: String,
-    hito: String,
-    fecha: Date,
-    materiales: String[],
-    desde: String,
-    hasta: String,
-    operarios:String,
-    imgs: String[],
-    usuario: String,
-    posteo: String,
-    lugar: String,
-    observaciones: String,
-    desarrollo: String
+    grupo: String;
+    ztrabajo: String;
+    hito: String;
+    fecha: Date;
+    materiales: String[];
+    desde: String;
+    hasta: String;
+    operarios: String;
+    imgs: String[];
+    usuario: String;
+    posteo: String;
+    lugar: String;
+    observaciones: String;
+    desarrollo: String;
 }
 
 // obtengo la hora actual
-ordenSchema.pre<IOrden>('save', function( next ) {
+ordenSchema.pre<IOrden>("save", function( next ) {
     this.fecha = new Date();
     next();
 });
 
-export const Orden = model<IOrden>('Orden', ordenSchema);
+export const Orden = model<IOrden>("Orden", ordenSchema);

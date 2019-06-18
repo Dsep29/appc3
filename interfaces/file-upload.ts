@@ -1,5 +1,4 @@
 
-
 // para trabajar con las imagenes
 export interface FileUpload {
     name: string;

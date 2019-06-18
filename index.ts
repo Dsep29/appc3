@@ -1,40 +1,38 @@
-import Server from './classes/server';
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+import Server from "./classes/server";
 
-import bodyParser from 'body-parser';
-import fileUpload from 'express-fileupload';
+import bodyParser from "body-parser";
+import fileUpload from "express-fileupload";
 
-import userRoutes from './routes/usuario';
-import postRoutes from './routes/post';
-import ordenRoutes from './routes/ordenes';
+import ordenRoutes from "./routes/ordenes";
+import postRoutes from "./routes/post";
+import userRoutes from "./routes/usuario";
 
-import Cors from 'cors';
-import materialRoutes from './routes/materiales';
-import express from 'express';
-import path from 'path';
+import Cors from "cors";
+import express from "express";
+import path from "path";
+import materialRoutes from "./routes/materiales";
 
 const server = new Server();
-
 
 // Body parser
 server.app.use( bodyParser.urlencoded({ extended: true }));
 server.app.use( bodyParser.json() );
 
-
 // FileUpload
 server.app.use( fileUpload({ useTempFiles: true }) ); // para importar archivos y usar archivos temp
 
-//config Cors
+// config Cors
 
-server.app.use( Cors({ origin:true, credentials: true}) );
+server.app.use( Cors({ origin: true, credentials: true}) );
 
-server.app.use(express.static(path.join(__dirname, 'dist')));
+server.app.use(express.static(path.join(__dirname, "dist")));
 
 // Rutas de mi app
-server.app.use('/user', userRoutes );
-server.app.use('/posts', postRoutes );
-server.app.use('/orden', ordenRoutes );
-server.app.use('/material', materialRoutes );
+server.app.use("/user", userRoutes );
+server.app.use("/posts", postRoutes );
+server.app.use("/orden", ordenRoutes );
+server.app.use("/material", materialRoutes );
 
 // var port = process.env.PORT || 5000 ; // linea nueva
 // server.app.set('port', port); // linea nueva
@@ -44,20 +42,20 @@ server.app.use('/material', materialRoutes );
 
 // Conectar DB mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority
 //  mongodb://localhost:27017/fepasa
-mongoose.connect('mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/fepasa?retryWrites=true&w=majority', 
+mongoose.connect("mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/fepasa?retryWrites=true&w=majority",
                 { useNewUrlParser: true, useCreateIndex: true }, ( err ) => {
 
-   if ( err ) throw  console.log(err);
-   console.log('Base de datos ONLINE');
+   if ( err ) { throw  console.log(err); }
+   console.log("Base de datos ONLINE");
 });
 
-//Levantar express
+// Levantar express
 server.start( () => {
     console.log(`Servidor corriendo en puerto ${ server.port }`);
 });
 
-server.app.get('/', function (req, res) {
-    res.send('Hello World!');
+server.app.get("/", function(req, res) {
+    res.send("Hello World!");
   });
 
 //   "scripts": {
@@ -69,4 +67,3 @@ server.app.get('/', function (req, res) {
 //     "postinstall": "tsc",
 //     "start:prod": "nodemon dist/index.js"
 //   },
-  

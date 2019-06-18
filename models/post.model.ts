@@ -1,7 +1,5 @@
 
-import { Schema, Document, model } from 'mongoose';
-
-
+import { Document, model, Schema } from "mongoose";
 
 // modeo del post
 const postSchema = new Schema({
@@ -21,37 +19,37 @@ const postSchema = new Schema({
     coords: {           // geo
         type: String   // -13.313123, 12.3123123
     },
-    estado:{
+    estado: {
         type: String
     },
-    comentario:{
+    comentario: {
         type: String
     },
-    comentario1:{
+    comentario1: {
         type: String
     },
-    comentario2:{
+    comentario2: {
         type: String
     },
-    lugar:{
+    lugar: {
         type: String
     },
-    desarrollo:{
+    desarrollo: {
         type: String
     },
-    observacion:{
+    observacion: {
         type: String
     },
     usuario: { // relacion Usuario
         type: Schema.Types.ObjectId,
-        ref: 'Usuario',
-        required: [ true, 'Debe de existir una referencia a un usuario' ] // Obligatorio
+        ref: "Usuario",
+        required: [ true, "Debe de existir una referencia a un usuario" ] // Obligatorio
     }
-    
+
 });
 
 // guardar post
-postSchema.pre<IPost>('save', function( next ) {
+postSchema.pre<IPost>("save", function( next ) {
     this.created = new Date();
     next();
 });
@@ -64,9 +62,9 @@ interface IPost extends Document {
     coords: string;
     usuario: string;
     estado: string;
-    comentario:string;
-    comentario1:string;
-    comentario2:string;
+    comentario: string;
+    comentario1: string;
+    comentario2: string;
 }
 
-export const Post = model<IPost>('Post', postSchema);
+export const Post = model<IPost>("Post", postSchema);

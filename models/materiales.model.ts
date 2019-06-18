@@ -1,10 +1,10 @@
-import { Schema, model, Document } from 'mongoose';
+import { Document, model, Schema } from "mongoose";
 
 const MaterialSchema = new Schema({
 
     nombre: {
         type: String,
-        required: [ true, 'El Nombre es necesario' ]
+        required: [ true, "El Nombre es necesario" ]
     },
     codigo: {
         type: String,
@@ -20,18 +20,17 @@ const MaterialSchema = new Schema({
     },
     ordenid: {
         type: Schema.Types.ObjectId,
-        ref: 'Orden',
+        ref: "Orden",
         // required: [ true, 'Información Necesaria' ]
     }
 });
 
 interface IMateriales extends Document {
-    nombre: String,
-    codigo: String,
-    unidad: String,
-    ordenid: String,
-    cantidad: String
+    nombre: String;
+    codigo: String;
+    unidad: String;
+    ordenid: String;
+    cantidad: String;
 }
 
-
-export const Material = model<IMateriales>('Material', MaterialSchema);
+export const Material = model<IMateriales>("Material", MaterialSchema);
