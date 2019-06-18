@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node index.ts",
     "ts-node": "ts-node index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "postinstall": "run npm i && npm install nodemon --save"
   },
   "author": "Diego",
   "license": "ISC",
