@@ -7,7 +7,7 @@
     "start": "ts-node index.ts",
     "ts-node": "ts-node index.ts",
     "build": "tsc",
-    "postinstall": "run npm i && npm install nodemon --save"
+    "postinstall": "npm install"
   },
   "author": "Diego",
   "license": "ISC",
