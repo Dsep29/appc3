@@ -32,7 +32,7 @@ const usuarioSchema = new Schema({
 
 usuarioSchema.method('compararPassword', function( password: string = ''): boolean {
 
-    if (  bcrypt.compareSync( password, this.password ) ) {
+    if (  bcrypt.compare( password, this.password ) ) {
         return true;
     } else {
         return false;
