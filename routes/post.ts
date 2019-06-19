@@ -60,9 +60,8 @@ postRoutes.post( "/upload", [ verificaToken ], async (req: any, res: Response) =
     // validaciones
     if ( !req.files ) { // no hay archivo en la ruta
         return res.status(400).json({
-            ok: false,
-// tslint:disable-next-line: object-literal-sort-keys
-            mensaje: "No se subió ningun archivo"
+            mensaje: "No se subió ningun archivo",
+            ok: false
         });
     }
 
@@ -70,26 +69,23 @@ postRoutes.post( "/upload", [ verificaToken ], async (req: any, res: Response) =
 
     if ( !file ) {
         return res.status(400).json({
-            ok: false,
-// tslint:disable-next-line: object-literal-sort-keys
-            mensaje: "No se subió ningun archivo - image"
+            mensaje: "No se subió ningun archivo - image",
+            ok: false
         });
     }
 
     if ( !file.mimetype.includes("image") ) {
         return res.status(400).json({
-            ok: false,
-// tslint:disable-next-line: object-literal-sort-keys
-            mensaje: "Lo que subió no es una imagen"
+            mensaje: "Lo que subió no es una imagen",
+            ok: false
         });
     }
 
     await fileSystem.guardarImagenTemporal( file, req.usuario._id );
 
     res.json({
-        ok: true,
-// tslint:disable-next-line: object-literal-sort-keys
-        file: file.mimetype
+        file: file.mimetype,
+        ok: true
     });
 
 });

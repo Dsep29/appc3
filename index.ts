@@ -42,7 +42,7 @@ server.app.use("/material", materialRoutes );
 
 // Conectar DB mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority
 //  mongodb://localhost:27017/fepasa
-mongoose.connect("mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/fepasa?retryWrites=true&w=majority",
+mongoose.connect("mongodb://localhost:27017/fepasa",
                 { useNewUrlParser: true, useCreateIndex: true }, ( err ) => {
 
 // tslint:disable-next-line: no-console
@@ -58,9 +58,9 @@ server.start( () => {
 });
 
 // tslint:disable-next-line: only-arrow-functions
-server.app.get("/", function(req, res) {
-    res.send("Hello World!");
-  });
+// server.app.get("/", function(req, res) {
+//     res.send("Hello World!");
+//   });
 
 //   "scripts": {
 //     "start": "nodemon dist/index.js",

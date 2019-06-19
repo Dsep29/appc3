@@ -35,7 +35,7 @@ server.app.use("/material", materiales_1.default);
 // server.app.listen(process.env.PORT || 5000 )
 // Conectar DB mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/test?retryWrites=true&w=majority
 //  mongodb://localhost:27017/fepasa
-mongoose_1.default.connect("mongodb+srv://Diego:Avondale15@fepasa-j0qfp.mongodb.net/fepasa?retryWrites=true&w=majority", { useNewUrlParser: true, useCreateIndex: true }, (err) => {
+mongoose_1.default.connect("mongodb://localhost:27017/fepasa", { useNewUrlParser: true, useCreateIndex: true }, (err) => {
     // tslint:disable-next-line: no-console
     if (err) {
         throw console.log(err);
@@ -49,9 +49,9 @@ server.start(() => {
     console.log(`Servidor corriendo en puerto ${server.port}`);
 });
 // tslint:disable-next-line: only-arrow-functions
-server.app.get("/", function (req, res) {
-    res.send("Hello World!");
-});
+// server.app.get("/", function(req, res) {
+//     res.send("Hello World!");
+//   });
 //   "scripts": {
 //     "start": "nodemon dist/index.js",
 //     "start:watch": "nodemon",
