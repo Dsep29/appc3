@@ -58,9 +58,9 @@ server.start( () => {
 });
 
 // tslint:disable-next-line: only-arrow-functions
-// server.app.get("/", function(req, res) {
-//     res.send("Hello World!");
-//   });
+server.app.get("/", function(req, res) {
+    res.send("Hello World!");
+  });
 
 //   "scripts": {
 //     "start": "nodemon dist/index.js",
