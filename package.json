@@ -22,7 +22,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.1-alpha.2",
-    "jsonwebtoken": "^8.4.0",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.4.11",
     "node-pre-gyp": "^0.13.0",
     "ts-node-dev": "^1.0.0-pre.40",
